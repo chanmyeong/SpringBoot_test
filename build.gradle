@@ -1,0 +1,82 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'junit:junit:4.12'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //MyBatis Framework
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+    //MySQL Driver
+    implementation 'mysql:mysql-connector-java'
+    //JDBC API
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    //Lombok
+    implementation 'org.projectlombok:lombok'
+
+    //developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+def webappDir = "$projectDir/src/main/coffeebean"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["$webappDir/build", "$projectDir/src/main/resources"]
+        }
+    }
+}
+
+processResources {
+    dependsOn "copyWebApp"
+}
+
+
+task copyWebApp(type: Copy) {
+    dependsOn "buildReact"
+    from "$webappDir/build"
+    into "$projectDir/src/main/resources/static"
+}
+
+
+task buildReact(type: Exec) {
+    dependsOn "installReact"
+    workingDir "$webappDir"
+    inputs.dir "$webappDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "run-script", "build"
+    } else {
+        commandLine "npm", "run-script", "build"
+    }
+}
+
+task installReact(type: Exec) {
+    workingDir "$webappDir"
+    inputs.dir "$webappDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "audit", "fix"
+        commandLine 'npm.cmd', 'install'
+    } else {
+        commandLine "npm", "audit", "fix"
+        commandLine 'npm', 'install'
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
