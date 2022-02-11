@@ -7,7 +7,7 @@ import java.util.Date;
 
 @RestController
 public class HelloController {
-    @GetMapping("/hello/world")
+    @GetMapping("/api/hello")
     public String hello() {
         return "HelloWorld " + new Date() + "\n";
     }

@@ -1,11 +1,5 @@
 @import "reset.css";
-@import "CafeReviewWrite.css";
 @import "variables.css";
-
-/*components*/
-
-/*screens*/
-@import "CafeReviewWrite.css";
 
 @font-face {
     font-family: 'KOTRAHOPE';

@@ -1,0 +1,40 @@
+header{
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: KOTRAHOPE;
+    background-color: var(--main-brown);
+}
+.head-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px 30px;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-font{
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--main-yellow);
+}
+.host-page-btn{
+    padding: 10px;
+    font-size: 23px;
+    border: 1px solid var(--main-yellow);
+    color: var(--main-yellow);
+    border-radius: 7px;
+}
+.login-btn{
+    padding: 10px;
+    font-size: 23px;
+    border: 1px solid var(--main-yellow);
+    color: var(--main-yellow);
+    border-radius: 7px;
+}
