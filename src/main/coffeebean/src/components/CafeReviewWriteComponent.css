@@ -1,5 +1,5 @@
 main{
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
     height: 40vh;
     display: flex;
@@ -11,43 +11,92 @@ main{
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 4fr;
-    align-items: center;
-    justify-items: center;
+    align-items: stretch;
+    justify-items: stretch;
+
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
 .review-order{
+    justify-self: start;
     align-content: stretch;
     justify-content: stretch;
-    background-color: pink;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
 .review-date{
+    justify-self: start;
     align-content: stretch;
     justify-content: stretch;
-    background-color: aqua;
+    text-align: center;
+
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
 .review-title{
     align-content: stretch;
     justify-content: stretch;
-    background-color: blue;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
 .review-userid{
+    justify-self: start;
     align-content: stretch;
     justify-content: stretch;
-    background-color: blueviolet;
+    text-align: center;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
 .review-content{
     align-content: stretch;
     justify-content: stretch;
-    background-color: chocolate;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
 .review-picture{
-    align-content: stretch;
-    justify-content: stretch;
-    background-color: darksalmon;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    border: 2px solid var(--main-gray);
+    padding: 12px;
+    margin: 3px;
+    word-break: break-all;
 }
 
+.reviewDone-button{
+    grid-column: 1/3;
+    display: flex;
+    justify-content: flex-end;
+}

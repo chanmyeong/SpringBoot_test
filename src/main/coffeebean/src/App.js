@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react';
 import Header from "./components/Header";
-import CafeReviewWriteComponent from "./components/CafeReviewWriteComponent";
+import AppRouter from "./AppRouter";
 
 import './App.css';
+import {Container} from "@material-ui/core";
 
 function App() {
 
@@ -19,10 +20,9 @@ function App() {
   return (
       <div>
           <Header/>
-          <p>
-            {/*{message}*/}
-            <CafeReviewWriteComponent/>
-          </p>
+      <div>
+          <AppRouter/>
+      </div>
       </div>
   );
 }

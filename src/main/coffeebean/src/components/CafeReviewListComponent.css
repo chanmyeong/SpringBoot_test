@@ -1,0 +1,49 @@
+.tableBox{
+    margin-top: 5px;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+}
+
+.reviewList{
+    width: 1000px;
+    min-width: 500px;
+    height: 5px;
+
+    border-collapse: collapse;
+    line-height: 1.5;
+}
+
+th, td{
+    border-left: 1px solid var(--main-gray);
+    padding: 5px;
+
+    text-align: center;
+}
+
+th:first-child, td:first-child {
+    border-left: none;
+}
+
+th{
+    background-color: var(--light-gray);
+    font-weight: bold;
+    border-bottom: 3px solid var(--main-gray);
+}
+
+td{
+    border-bottom: 1px solid var(--main-gray);
+    background-color: #F5F5F5;
+}
+
+.reviewWrite-button{
+    width: 1000px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

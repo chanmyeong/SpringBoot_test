@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Mapper.CafeReviewDetailMapper">
+
+    <select id="getCafeReview2" resultType="com.example.demo.DTO.CafeReviewDTO">
+        SELECT * FROM review
+        where cafe_code = #{cafe_code} AND review_code = #{review_code};
+    </select>
+
+
+</mapper>

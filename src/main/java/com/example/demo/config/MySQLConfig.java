@@ -11,7 +11,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.example.demo.DTO")
+@MapperScan("com.example.demo.Mapper")
 public class MySQLConfig {
 
 
