@@ -4,6 +4,7 @@ import CafeReviewListComponent from "./components/CafeReviewListComponent";
 import CafeReviewWriteComponent from "./components/CafeReviewWriteComponent";
 import CafeReviewDetailComponent from "./components/CafeReviewDetailComponent";
 import CafeRegisterComponent from "./components/CafeRegisterComponent";
+import ShowMyCafeComponent from "./components/ShowMyCafeComponent";
 
 const AppRouter = () => {
     return (
@@ -16,7 +17,7 @@ const AppRouter = () => {
                     <Route path = "/cafe-review-list" component = {CafeReviewListComponent} />
                     <Route path = "/cafe-review-write" component = {CafeReviewWriteComponent} />
                     <Route path = "/cafe-review-detail" component = {CafeReviewDetailComponent} />
-
+                    <Route path = "/show-my-cafe" component = {ShowMyCafeComponent} />
                 </Switch>
             </div>
         </div>

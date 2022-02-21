@@ -39,6 +39,11 @@ class CafeReviewListComponent extends Component
         this.props.history.push('/cafe-review-detail');
     }
 
+    reviewWrite = (code) => {
+        window.localStorage.setItem("review_code",code);
+        this.props.history.push('/cafe-review-write');
+    }   // 0218 추가
+
     render(){
 
         return(
@@ -61,7 +66,7 @@ class CafeReviewListComponent extends Component
                     </table>
                     <div className="reviewWrite-button">
                         <CardActions>
-                            <Button type="submit" size="small" color="primary">
+                            <Button type="submit" size="small" color="primary" onClick={() => this.reviewWrite(this.state.review_code)}>
                                 리뷰 작성하기
                             </Button>
                         </CardActions>
